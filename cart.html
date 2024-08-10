@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="css/cart.css"> <!-- Link to your cart CSS file -->
+    <title>Cart</title>
+</head>
+<body>
+    <header>
+        <img src="gallery/strixxlogo.png" alt="Strix Logo" class="logo">
+    </header>
+
+    <main>
+        <<div id="cart-items"></div>
+        <div id="cart-summary">
+            <h1>Your Cart</h1>
+            <p>Items: <span id="item-count">0</span></p>
+            <p>Subtotal: $<span id="subtotal">0.00</span></p>
+            <p>Tax (8.938%): $<span id="tax">0.00</span></p>
+            <p>Shipping: $9.99</p>
+            <p>Total: $<span id="total">0.00</span></p>
+            <button id="pay-now">Pay Now</button>
+        </div>
+    </main>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

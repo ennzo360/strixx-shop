@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
+    <title>Strixx</title>
+</head>
+<body>
+    <header>
+        <div class="cart-container">
+            <a href="cart.html" class="cart"> <!-- Wrap cart icon and text in an anchor tag -->
+                <img src="gallery/shopping-basket.png" alt="Cart Icon" class="cart-icon">
+                <span class="cart-text">Cart</span>
+				<span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+        <img src="gallery/strixxlogo.png" alt="Strix Logo" class="logo">
+    </header>
+
+		<div class="filter-container">
+			<div class="filter">
+				<label for="product-filter">Filter:</label>
+				<select id="product-filter" onchange="filterProducts()">
+					<option value="all">All</option>
+					<option value="shirts">Shirts</option>
+					<option value="sweaters">Sweaters</option>
+				</select>
+			</div>
+		</div>
+
+    <main>
+        <div class="product-container">
+            <div class="product-grid">
+                <!-- Products -->
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt1.png', 'Shirt 1', '$39.99')">
+                    <img src="gallery/shirt1.png" alt="Shirt 1" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt2.png', 'Shirt 2', '$39.99')">
+                    <img src="gallery/shirt2.png" alt="Shirt 2" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt3.png', 'Shirt 3', '$39.99')">
+                    <img src="gallery/shirt3.png" alt="Shirt 3" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt4.png', 'Shirt 4', '$39.99')">
+                    <img src="gallery/shirt4.png" alt="Shirt 4" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt5.png', 'Shirt 5', '$39.99')">
+                    <img src="gallery/shirt5.png" alt="Shirt 5" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="shirts" onclick="openPopup('gallery/shirt6.png', 'Shirt 6', '$39.99')">
+                    <img src="gallery/shirt6.png" alt="Shirt 6" class="product-image">
+                    <p>W.I.P - $39.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/STRIXcgWHITE.png', 'Sweater 1', '$59.99')">
+                    <img src="gallery/STRIXcgWHITE.png" alt="Sweater 1" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/strixCG.png', 'Sweater 2', '$59.99')">
+                    <img src="gallery/strixCG.png" alt="Sweater 2" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/strixowlHPM.png', 'Sweater 3', '$59.99')">
+                    <img src="gallery/strixowlHPM.png" alt="Sweater 3" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/dull.png', 'Sweater 4', '$59.99')">
+                    <img src="gallery/dull.png" alt="Sweater 4" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/horror.png', 'Sweater 5', '$59.99')">
+                    <img src="gallery/horror.png" alt="Sweater 5" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/strixSAW3.png', 'Sweater 6', '$59.99')">
+                    <img src="gallery/strixSAW3.png" alt="Sweater 6" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/strixdiscip.png', 'Sweater 7', '$59.99')">
+                    <img src="gallery/strixdiscip.png" alt="Sweater 7" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/strixperch.png', 'Sweater 8', '$59.99')">
+                    <img src="gallery/strixperch.png" alt="Sweater 8" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+                <div class="product" data-tag="sweaters" onclick="openPopup('gallery/dota2.png', 'Sweater 9', '$59.99')">
+                    <img src="gallery/dota2.png" alt="Sweater 9" class="product-image">
+                    <p>W.I.P - $59.99</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <<div id="popup" class="popup">
+		<div class="popup-content">
+			<span class="close" onclick="closePopup()" style="float: right;">&times;</span>
+			<img id="popup-image" src="" alt="Product" class="popup-image">
+			<p id="popup-name">Product Name</p>
+			<p id="popup-price">Price</p>
+			<div id="popup-sizes">
+				<span class="size-option">XS</span>
+				<span class="size-option">S</span>
+				<span class="size-option">M</span>
+				<span class="size-option">L</span>
+				<span class="size-option">XL</span>
+				<span class="size-option">XXL</span>
+			</div>
+			<div id="size-message" class="size-message" style="display: none;">
+				Please select a size before adding to cart.
+			</div>
+			<button id="add-to-cart">Add to Cart</button>
+		</div>
+	</div>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative; /* Allow child elements to be positioned absolutely */
+    text-align: center; /* Center the logo */
+}
+
+.logo {
+    width: 624px; /* Set a fixed width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Flex container for the cart */
+.cart-container {
+    display: flex;
+    justify-content: flex-end; /* Align cart to the right */
+    margin: 20px; /* Place some space around the cart */
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 80px; /* Fixed width for the cart icon */
+    height: 80px; /* Fixed height for the cart icon */
+}
+
+.cart-text {
+    font-weight: bold;
+    font-size: large;
+    margin-left: 5px;
+}
+
+/* Separate container for the filter */
+.filter-container {
+    display: flex; /* Flex container for the filter */
+    justify-content: center; /* Center the filter */
+    margin: 20px 0; /* Space around the filter */
+}
+
+/* Filter styling */
+.filter {
+    margin: 0; /* Reset margins for the filter itself */
+    padding: 10px; /* Add some padding for better spacing */
+}
+
+/* Container for the product grid */
+.product-container {
+    width: 100%; /* Full width of the viewport */
+    max-width: 1920px; /* Max width */
+    margin: 30px auto 0; /* Centered with auto margins */
+    padding: 0 20px; /* Add some padding on the sides */
+}
+
+/* Product grid with fixed 3x5 layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between products */
+}
+
+/* Individual product styles */
+.product {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px; /* Padding for the product */
+    border: 1px solid #ccc; /* Optional: border for products */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.product-image {
+    width: 100%; /* Full width of the product container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Popup styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    max-height: 80%; /* Limit the height of the popup */
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative; /* Required for positioning the close button */
+}
+
+.popup-image {
+    width: 75%; /* 1.5 times larger */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#popup-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#popup-price {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#popup-sizes {
+    display: flex;
+    gap: 5px; /* Space between size options */
+    margin: 10px 0; /* Margin above and below */
+}
+
+.size-option {
+    width: 30px; /* Width of the size squares */
+    height: 30px; /* Height of the size squares */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000; /* Border for the size squares */
+    cursor: pointer;
+}
+
+.size-option:hover {
+    background-color: #f0f0f0; /* Hover effect */
+}
+
+.size-option.selected {
+    background-color: gray; /* Gray background for selected size */
+    color: white; /* Optional: Change text color for contrast */
+}
+
+#add-to-cart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.size-message {
+    background-color: red; /* Red background */
+    color: white; /* White text */
+    padding: 10px; /* Padding around the text */
+    margin-bottom: 10px; /* Space below the message */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.cart-count {
+    position: absolute; /* Position it relative to the cart container */
+    top: 0; /* Adjust top position */
+    right: 0; /* Adjust right position */
+    background-color: red; /* Red background for visibility */
+    color: white; /* White text color */
+    border-radius: 50%; /* Make it a circle */
+    width: 20px; /* Width of the circle */
+    height: 20px; /* Height of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Font size for the count */
+    visibility: hidden; /* Initially hidden */
+}
